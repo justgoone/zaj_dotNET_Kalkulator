@@ -11,9 +11,14 @@ namespace Kalkulator
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private string
+        private string?
             wynik = "0",
-            działanie
+            działanie,
+            operacja = null
+            ;
+        private double?
+            operandLewy = null,
+            operandPrawy = null
             ;
 
         public string Wynik { 
@@ -26,15 +31,15 @@ namespace Kalkulator
                     );
                 }
         }
-        public string Działanie { 
-            get => działanie;
-            set
+        public string Działanie {
+            get
             {
-                działanie = value;
-                PropertyChanged?.Invoke(
-                    this,
-                    new PropertyChangedEventArgs("Działanie")
-                    );
+                if (operandLewy == null)
+                    return "";
+                else if (operandPrawy == null)
+                    return $"{operandLewy} {operacja}";
+                else
+                    return $"{operandLewy} {operacja} {operandPrawy} = ";
             }
         }
 
@@ -82,11 +87,57 @@ namespace Kalkulator
         internal void CzyśćWszystko()
         {
             CzyśćWynik();
+            operacja = null;
+            operandLewy = operandPrawy = null;
+
+            PropertyChanged?.Invoke(
+                    this,
+                    new PropertyChangedEventArgs("Działanie")
+                    );
         }
 
         internal void CzyśćWynik()
         {
             Wynik = "0";
+        }
+
+        internal void WprowadźOperację(string operacja)
+        {
+            if (this.operacja != null)
+            {
+                WykonajDziałanie();
+                this.operacja = operacja;
+            }
+            else
+            {
+                operandLewy = Convert.ToDouble(wynik);
+                this.operacja = operacja;
+
+                PropertyChanged?.Invoke(
+                        this,
+                        new PropertyChangedEventArgs("Działanie")
+                        );
+            }
+            wynik = "0";
+        }
+
+        internal void WykonajDziałanie()
+        {
+            if (operandPrawy == null)
+                if (wynik == "0")
+                    operandPrawy = operandLewy;
+                else
+                    operandPrawy = Convert.ToDouble(wynik);
+
+            PropertyChanged?.Invoke(
+                    this,
+                    new PropertyChangedEventArgs("Działanie")
+                    );
+
+            if (operacja == "+")
+                Wynik = (operandLewy + operandPrawy).ToString();
+
+            operandLewy = Convert.ToDouble(wynik);
         }
     }
 }

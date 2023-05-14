@@ -57,5 +57,16 @@ namespace Kalkulator
         {
             Kalkulator.CzyśćWynik();
         }
+
+        private void DziałanieDwuargumentowe(object sender, RoutedEventArgs e)
+        {
+            string operacja = ((Button)sender).Content.ToString();
+            Kalkulator.WprowadźOperację(operacja);
+        }
+
+        private void RównaSię(object sender, RoutedEventArgs e)
+        {
+            Kalkulator.WykonajDziałanie();
+        }
     }
 }
