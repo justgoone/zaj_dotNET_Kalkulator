@@ -12,7 +12,7 @@ namespace NET_PR2_1_z4
 		public event PropertyChangedEventHandler? PropertyChanged;
 
 		private string
-			wynik,
+			wynik = "0",
 			działanie
 			;
 
@@ -40,7 +40,55 @@ namespace NET_PR2_1_z4
 
 		internal void WprowadźCyfrę(string? cyfra)
 		{
-			Wynik += cyfra;
+			if (wynik == "0")
+				if (cyfra == "0")
+					return;
+				else
+					Wynik = cyfra;
+			else
+				Wynik += cyfra;
+		}
+
+		internal void WprowadźPrzecinek()
+		{
+			if (wynik.Contains(','))
+				return;
+			else
+				Wynik += ',';
+		}
+
+		internal void ZmieńZnak()
+		{
+			if (wynik == "0")
+				return;
+			else if (wynik[0] == '-')
+				Wynik = wynik.Substring(1);
+			else
+				Wynik = '-' + wynik;
+		}
+
+		internal void KasujZnak()
+		{
+			if (wynik == "0")
+				return;
+			else if (
+				wynik.Length == 1
+				|| (wynik.Length == 2 && wynik[0] == '-')
+				|| wynik == "-0,"
+				)
+				Wynik = "0";
+			else
+				Wynik = wynik.Substring(0, wynik.Length - 1);
+		}
+
+		internal void CzyśćWszystko()
+		{
+			CzyśćWynik();
+		}
+
+		internal void CzyśćWynik()
+		{
+			Wynik = "0";
 		}
 	}
 }
