@@ -32,5 +32,30 @@ namespace Kalkulator
             string cyfra = ((Button)sender).Content.ToString();
             Kalkulator.WprowadźCyfrę(cyfra);
         }
+
+        private void Przecinek(object sender, RoutedEventArgs e)
+        {
+            Kalkulator.DodajPrzecinek();
+        }
+
+        private void ZmianaZnaku(object sender, RoutedEventArgs e)
+        {
+            Kalkulator.ZmieńZnak();
+        }
+
+        private void KasowanieZnaku(object sender, RoutedEventArgs e)
+        {
+            Kalkulator.KasujZnak();
+        }
+
+        private void Czyszczenie(object sender, RoutedEventArgs e)
+        {
+            Kalkulator.CzyśćWszystko();
+        }
+
+        private void CzyszczenieWprowadzenia(object sender, RoutedEventArgs e)
+        {
+            Kalkulator.CzyśćWynik();
+        }
     }
 }

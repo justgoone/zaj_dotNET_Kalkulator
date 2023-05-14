@@ -28,9 +28,9 @@
             Style="{DynamicResource Wiersz}"
             >
             <Button></Button>
-            <Button></Button>
-            <Button>C</Button>
-            <Button>-</Button>
+            <Button Click="CzyszczenieWprowadzenia">CE</Button>
+            <Button Click="Czyszczenie">C</Button>
+            <Button Click="KasowanieZnaku">⌫</Button>
         </StackPanel>
         <StackPanel 
             Style="{DynamicResource Wiersz}"
@@ -43,33 +43,68 @@
         <StackPanel 
             Style="{DynamicResource Wiersz}"
             >
-            <Button Style="{DynamicResource Cyfra}">7</Button>
-            <Button Style="{DynamicResource Cyfra}">8</Button>
-            <Button Style="{DynamicResource Cyfra}">9</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >7</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >8</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >9</Button>
             <Button>*</Button>
         </StackPanel>
         <StackPanel 
             Style="{DynamicResource Wiersz}"
             >
-            <Button Style="{DynamicResource Cyfra}">4</Button>
-            <Button Style="{DynamicResource Cyfra}">5</Button>
-            <Button Style="{DynamicResource Cyfra}">6</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >4</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >5</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >6</Button>
             <Button>-</Button>
         </StackPanel>
         <StackPanel 
             Style="{DynamicResource Wiersz}"
             >
-            <Button Style="{DynamicResource Cyfra}">1</Button>
-            <Button Style="{DynamicResource Cyfra}">2</Button>
-            <Button Style="{DynamicResource Cyfra}">3</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >1</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >2</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}"
+                Click="Cyfra"
+                >3</Button>
             <Button>+</Button>
         </StackPanel>
         <StackPanel 
             Style="{DynamicResource Wiersz}"
             >
-            <Button Style="{DynamicResource Cyfra}">+/-</Button>
-            <Button Style="{DynamicResource Cyfra}" Click="Cyfra">0</Button>
-            <Button Style="{DynamicResource Cyfra}">,</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}" Click="ZmianaZnaku"
+                >+/-</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}" 
+                Click="Cyfra"
+                >0</Button>
+            <Button 
+                Style="{DynamicResource Cyfra}" Click="Przecinek" 
+
+                >,</Button>
             <Button Background="AliceBlue">=</Button>
         </StackPanel>
     </StackPanel>
