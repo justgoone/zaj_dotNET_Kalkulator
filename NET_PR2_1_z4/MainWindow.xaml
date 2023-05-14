@@ -26,7 +26,7 @@
         <StackPanel
             Style="{DynamicResource Wiersz}"
             >
-            <Button></Button>
+            <Button Background="AliceBlue">%</Button>
             <Button Click="CzyszczenieWprowadzenia">CE</Button>
             <Button Click="Czyszczenie">C</Button>
             <Button Click="KasowanieZnaku">⌫</Button>
@@ -88,7 +88,7 @@
                 Style="{DynamicResource Cyfra}"
                 Click="Cyfra"
                 >3</Button>
-            <Button>+</Button>
+            <Button Click="DziałanieDwuargumentowe">+</Button>
         </StackPanel>
         <StackPanel
             Style="{DynamicResource Wiersz}"
@@ -99,7 +99,7 @@
                 Click="Cyfra"
                 >0</Button>
             <Button Style="{DynamicResource Cyfra}" Click="Przecinek">,</Button>
-            <Button Background="AliceBlue">=</Button>
+            <Button Background="AliceBlue" Click="RównaSię">=</Button>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -56,4 +56,15 @@ public partial class MainWindow : Window
 	{
 		Kalkulator.CzyśćWynik();
 	}
+
+	private void DziałanieDwuargumentowe(object sender, RoutedEventArgs e)
+	{
+		string działanie = ((Button)sender).Content.ToString();
+		Kalkulator.WprowadźOperacja(działanie);
+	}
+
+	private void RównaSię(object sender, RoutedEventArgs e)
+	{
+		Kalkulator.WykonajDziałanie();
+	}
 }
