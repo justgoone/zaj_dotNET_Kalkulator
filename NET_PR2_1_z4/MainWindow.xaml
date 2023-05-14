@@ -16,11 +16,13 @@
             FontSize="16"
             TextAlignment="Right"
             Margin="0,0,5,0"
-            >Działanie</TextBlock>
+            Text="{Binding Path=Działanie}"
+            />
         <TextBlock
             TextAlignment="Right"
             Margin="0,0,5,0"
-            >Wynik</TextBlock>
+            Text="{Binding Path=Wynik}"
+            />
         <StackPanel
             Style="{DynamicResource Wiersz}"
             >
@@ -65,7 +67,7 @@
             Style="{DynamicResource Wiersz}"
             >
             <Button Style="{DynamicResource Cyfra}">+/-</Button>
-            <Button Style="{DynamicResource Cyfra}">0</Button>
+            <Button Style="{DynamicResource Cyfra}" Click="Cyfra">0</Button>
             <Button Style="{DynamicResource Cyfra}">,</Button>
             <Button Background="AliceBlue">=</Button>
         </StackPanel>

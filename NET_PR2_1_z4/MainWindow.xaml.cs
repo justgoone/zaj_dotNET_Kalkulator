@@ -19,8 +19,16 @@ namespace NET_PR2_1_z4;
 /// </summary>
 public partial class MainWindow : Window
 {
+	private Kalkulator Kalkulator { get; } = new Kalkulator();
 	public MainWindow()
 	{
+		DataContext = Kalkulator;
 		InitializeComponent();
+	}
+
+	private void Cyfra(object sender, RoutedEventArgs e)
+	{
+		string cyfra = ((Button)sender).Content.ToString();
+		Kalkulator.WprowadźCyfrę(cyfra);
 	}
 }
