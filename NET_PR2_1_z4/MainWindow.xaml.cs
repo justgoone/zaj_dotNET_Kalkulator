@@ -67,4 +67,10 @@ public partial class MainWindow : Window
 	{
 		Kalkulator.WykonajDziałanie();
 	}
+
+    private void DziałanieJednoargumentowe(object sender, RoutedEventArgs e)
+    {
+        string działanie = ((Button)sender).Content.ToString();
+        Kalkulator.WprowadźOperacja(działanie);
+    }
 }

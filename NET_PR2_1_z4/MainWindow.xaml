@@ -34,10 +34,10 @@
         <StackPanel
             Style="{DynamicResource Wiersz}"
             >
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
-            <Button>/</Button>
+            <Button Click="DziałanieJednoargumentowe">1/x</Button>
+            <Button Click="DziałanieJednoargumentowe">x²</Button>
+            <Button Click="DziałanieJednoargumentowe">2√x</Button>
+            <Button Click="DziałanieDwuargumentowe">/</Button>
         </StackPanel>
         <StackPanel
             Style="{DynamicResource Wiersz}"
@@ -54,7 +54,7 @@
                 Style="{DynamicResource Cyfra}"
                 Click="Cyfra"
                 >9</Button>
-            <Button>*</Button>
+            <Button Click="DziałanieDwuargumentowe">*</Button>
         </StackPanel>
         <StackPanel
             Style="{DynamicResource Wiersz}"
@@ -71,7 +71,7 @@
                 Style="{DynamicResource Cyfra}"
                 Click="Cyfra"
                 >6</Button>
-            <Button>-</Button>
+            <Button Click="DziałanieDwuargumentowe">-</Button>
         </StackPanel>
         <StackPanel
             Style="{DynamicResource Wiersz}"

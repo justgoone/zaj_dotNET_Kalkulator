@@ -110,7 +110,7 @@ namespace NET_PR2_1_z4
 			}
 			else
 			{
-				operandLewy = Convert.ToDouble(wynik);
+				operandLewy = Convert.ToDouble(Wynik);
 				this.operacja = operacja;
 				PropertyChanged?.Invoke(
 					this,
@@ -132,9 +132,32 @@ namespace NET_PR2_1_z4
 				this,
 				new PropertyChangedEventArgs("Działanie")
 				);
+			if (operandPrawy != Convert.ToDouble(Wynik)) operandPrawy = Convert.ToDouble(Wynik);
+
 			if (operacja == "+")
 				Wynik = (operandLewy + operandPrawy).ToString();
-			operandLewy = Convert.ToDouble(wynik);
-		}
+			
+            else if (operacja == "-")
+                Wynik = (operandLewy - operandPrawy).ToString();
+            
+            else if (operacja == "*")
+                Wynik = (operandLewy * operandPrawy).ToString();
+            
+            else if (operacja == "/")
+                Wynik = (operandLewy / operandPrawy).ToString();
+
+
+            else if (operacja == "1/x")
+                Wynik = (1 / operandLewy).ToString();
+
+            else if (operacja == "x²")
+                Wynik = (operandLewy * operandLewy).ToString();
+
+            else if (operacja == "2√x")
+                Wynik = Math.Sqrt((double)operandLewy).ToString();
+
+
+            operandLewy = Convert.ToDouble(wynik);
+        }
 	}
 }
